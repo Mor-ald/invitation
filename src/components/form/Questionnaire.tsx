@@ -1,8 +1,8 @@
 import "./Questionnaire.css";
-import {InputText} from "primereact/inputtext";
 import { MultiSelect } from 'primereact/multiselect';
 import {useState} from "react";
 import {Button} from "primereact/button";
+import {InputText} from "primereact/inputtext";
 
 const Questionnaire = () => {
     const [go, setGo] = useState("");
@@ -53,7 +53,7 @@ const Questionnaire = () => {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder={"Морозов Алексей, Морозова Алина"}
-                        autocomplete="off"
+                        autoComplete="off"
                         required
                     />
                 </div>

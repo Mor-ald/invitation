@@ -15,7 +15,7 @@ const Remained = () => {
     }
 
     useEffect(()=> {
-        const diff = (finishTime - new Date()) / 1000;
+        const diff = (finishTime - Number(new Date())) / 1000;
         if (diff < 0) return // время вышло
         setDiff([
             Math.floor(diff / 86400), // дни
