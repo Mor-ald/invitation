@@ -6,7 +6,7 @@ const Remained = () => {
     const [[diffDays, diffH, diffM, diffS], setDiff] = useState([0, 0, 0, 0]);
     const [tick, setTick] = useState(false);
 
-    function dayTitle(number) {
+    function dayTitle(number: number) {
         if (number > 10 && [11, 12, 13, 14].includes(number%100)) return 'дней';
         const last_num = number%10;
         if (last_num == 1) return 'день';

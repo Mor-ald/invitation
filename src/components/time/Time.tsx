@@ -12,7 +12,7 @@ const Time = () => {
 
     ];
 
-    const customizedContent = (item) => {
+    const customizedContent = (item: {time: string, text: string}) => {
         return (
           <div className="event">
               <span className="event__time">{item.time}</span>
