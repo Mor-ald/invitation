@@ -36,7 +36,7 @@ const Remained = () => {
                 <img className={"remained_img"} src={"/p4.jpg"} alt={"remained photo"}/>
             </div>
             <div className="remained__container">
-                <div className="remained__date">Девятое сентября 2023</div>
+                <div className="remained__date">09.09.2023</div>
                 <div className="remained__text">До свадьбы осталось</div>
                 <div className="remained__last_time">
                     <div className="remained__days">{diffDays} {dayTitle(Number(diffDays))}</div>
