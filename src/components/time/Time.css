@@ -8,13 +8,14 @@
 }
 
 .time-container {
-    margin-top: 6rem;
+    margin-top: 3rem;
     margin-right: 1rem;
+    margin-bottom: -3rem;
 }
 
 .event {
     transform: translateY(-5px);
-    height: 125px;
+    height: 100px;
 }
 
 .event__time, .event__text {
