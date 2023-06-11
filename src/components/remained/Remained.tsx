@@ -2,7 +2,6 @@ import "./Remained.css";
 import {useEffect, useState} from "react";
 
 const Remained = () => {
-    const [finishTime] = useState(new Date("2023-09-09 12:30").getTime());
     const [[diffDays, diffH, diffM, diffS], setDiff] = useState([0, 0, 0, 0]);
     const [tick, setTick] = useState(false);
 
@@ -15,7 +14,7 @@ const Remained = () => {
     }
 
     useEffect(()=> {
-        const diff = (finishTime - Number(new Date())) / 1000;
+        const diff = (new Date("2023-09-09 12:30").getTime() - new Date().getTime()) / 1000;
         if (diff < 0) return // время вышло
         setDiff([
             Math.floor(diff / 86400), // дни
@@ -23,7 +22,7 @@ const Remained = () => {
             Math.floor((diff / 60) % 60),
             Math.floor(diff % 60)
         ])
-    }, [tick, finishTime]);
+    }, [tick]);
 
     useEffect(()=>{
         const timerID = setInterval(() => setTick(!tick), 1000);
