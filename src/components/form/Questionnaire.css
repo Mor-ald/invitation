@@ -1,0 +1,115 @@
+.p-inputtext:enabled:focus {
+    box-shadow: 0 0 0 0.1rem #D8918D !important;
+    border-color: #D8918D !important;
+}
+
+.p-multiselect:not(p-disabled).p-focus {
+    box-shadow: 0 0 0 0.1rem #D8918D !important;
+    border-color: #D8918D !important;
+}
+
+.p-multiselect-panel .p-multiselect-items .p-multiselect-item.p-highlight {
+    background: #D8918D !important;
+}
+
+.p-multiselect-panel .p-multiselect-items .p-multiselect-item:focus {
+    box-shadow: inset 0 0 0 0.15rem #D8918D !important;
+}
+
+.p-checkbox .p-checkbox-box.p-highlight {
+    background: #D8918D !important;
+
+}
+
+.p-checkbox .p-checkbox-box.p-highlight:hover{
+    border-color: #D8918D !important;
+}
+
+.p-button:focus {
+    box-shadow: 0 0 0 0.1rem #8d5f5b !important;
+}
+
+
+.questionnaire {
+    margin: 3rem 0;
+}
+
+.questionnaire__text {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: EB Garamond, serif;
+    font-size: 1.25rem;
+}
+
+.questionnaire__form {
+    width: 40%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    font-family: EB Garamond, serif;
+    font-size: 1.25rem;
+}
+
+.questionnaire__fieldset {
+    margin: 0.5rem 0 0 0;
+    padding: 0;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.questionnaire__item {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+.questionnaire__fieldset_item {
+    margin-left: 0;
+    margin-right: 0.5rem;
+    width: 16px;
+    height: 16px;
+    accent-color: black;
+}
+
+.questionnaire__name {
+    width: 100%;
+    margin: 0.25rem 0 0 0 !important;
+}
+
+.questionnaire__alco {
+    width: 100%;
+    margin: 0.25rem 0 0 0 !important;
+}
+
+.questionnaire__button {
+    margin: 1rem 0 0 0 !important;
+    background: #D8918D !important;
+    border-color: #D8918D !important;
+}
+
+@media (max-width: 1000px) {
+    .questionnaire__name {
+        width: 100%;
+    }
+    .questionnaire__alco {
+        width: 100%;
+    }
+}
+
+@media (max-width: 750px){
+    .questionnaire__form {
+        width: 80%;
+    }
+}
+
+@media (max-width: 400px) {
+    .questionnaire__text{
+        width: 80%;
+    }
+    .questionnaire__form {
+        width: 95%;
+    }
+}

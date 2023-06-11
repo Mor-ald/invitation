@@ -1,0 +1,29 @@
+.dress-code__text {
+    margin: 0.5rem 1rem;
+    text-align: center;
+    font-family: EB Garamond, serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.dress-code__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.dress-code__who {
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+    font-family: EB Garamond, serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.dress-code_item {
+    margin: 0.5rem;
+    padding: 3rem;
+    border-radius: 50%;
+}
+

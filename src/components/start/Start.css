@@ -1,0 +1,133 @@
+.start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.start__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.start__container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+}
+
+.start__logo {
+    font-family: Viaoda Libre, serif;
+    font-size: 140px;
+    line-height: 100px;
+    z-index: 10;
+}
+
+.start__text_container {
+    width: 60%;
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(197, 197, 197, 0.7);
+    border-radius: 30px;
+    box-shadow: 0 0 4px 5px rgba(197, 197, 197, 0.7);
+}
+
+.start__welcome {
+    margin: 0.25rem 0 0.5rem 0;
+    font-family: Pacifico, serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.start__date {
+    margin: 0 0 1rem 0;
+    font-family: Merriweather, serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #8f8507;
+}
+
+.start__text {
+    margin: 0.5rem 0 2rem 0;
+    font-family: EB Garamond, serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.start__time {
+    font-style: italic;
+}
+
+.start__additional {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: EB Garamond, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.start__address {
+    color: #8f8507;
+    transition: 0.2s ease;
+}
+
+.start__address:hover {
+    opacity: 0.65;
+}
+
+.start__additional span {
+    margin: 0.1rem 0;
+}
+
+.start__grooms {
+    margin: 0.25rem 0;
+    font-family: EB Garamond, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.75rem;
+    text-align: center;
+    color: #000000;
+}
+
+@media (max-width: 1100px) {
+    .start__container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 750px) {
+    .start__text_container {
+        width: 100%;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .start__logo {
+        font-size: 100px;
+        line-height: 80px;
+    }
+    .start__welcome{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 300px) {
+    .start__container {
+        width: 90%;
+    }
+    .start__text_container {
+        padding: 0.5rem 0.5rem;
+    }
+}

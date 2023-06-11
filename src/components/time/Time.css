@@ -1,0 +1,54 @@
+.p-timeline .p-timeline-event-marker {
+    border: 2px solid #D8918D; !important;
+    background: #D8918D !important;
+}
+
+.time {
+    margin-top: 6rem;
+}
+
+.time-container {
+    margin-top: 6rem;
+    margin-right: 1rem;
+}
+
+.event {
+    transform: translateY(-5px);
+    height: 125px;
+}
+
+.event__time, .event__text {
+    font-family: EB Garamond, serif;
+    font-size: 1.25rem;
+}
+
+.event__time {
+    color: #D8918D;
+    font-weight: 700;
+}
+
+.event__text {
+    font-weight: 500;
+}
+
+@media (max-width: 1000px) {
+    .time-container {
+        margin-right: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .event__time, .event__text {
+        font-size: 1.25rem;
+    }
+    .time-container {
+        margin-right: 0;
+    }
+    .p-timeline-event-separator {
+        margin-left: 1rem !important;
+    }
+
+    .p-timeline-event-opposite {
+        display: none !important;
+    }
+}

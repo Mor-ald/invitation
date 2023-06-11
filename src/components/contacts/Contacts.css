@@ -1,0 +1,26 @@
+.contacts {
+    width: 30%;
+    font-family: EB Garamond, serif;
+    font-size: 1.25rem;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.contacts a {
+    display: block;
+    margin-top: 0.35rem;
+    color: #D8918D;
+    text-decoration: none;
+    transition: 0.2s ease;
+    font-weight: bold;
+}
+
+.contacts a:hover {
+    opacity: 0.65;
+}
+
+@media (max-width: 750px){
+    .contacts {
+        width: 80%;
+    }
+}

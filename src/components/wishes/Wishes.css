@@ -1,0 +1,13 @@
+.wishes__text {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: EB Garamond, serif;
+    font-size: 1.25rem;
+}
+
+@media (max-width: 400px) {
+    .wishes__text{
+        width: 80%;
+    }
+}
