@@ -9,17 +9,20 @@ import axios from "axios";
 const Questionnaire = () => {
     const [go, setGo] = useState("");
     const [name, setName] = useState("");
-    const [selectedAlco, setSelectedAlco] = useState(null)
+    const [selectedAlco, setSelectedAlco] = useState([]);
+    const [yesChecked, setYesChecked] = useState(false);
+    const [noChecked, setNoChecked] = useState(false);
+
     const alcohol = [
-        {label: "Красное сухое вино", value: "dry red wine"},
-        {label: "Красное п/сл вино", value: "semi-sweet red wine"},
-        {label: "Белое сухое", value: "dry white wine"},
-        {label: "Белое п/сл вино", value: "semi-sweet white wine"},
-        {label: "Шампанское", value: "champagne"},
-        {label: "Мартини", value: "martini"},
-        {label: "Коньяк", value: "cognac"},
-        {label: "Водка", value: "vodka"},
-        {label: "Виски", value: "whiskey"},
+        {label: "Красное сухое вино", value: "Красное сухое вино"},
+        {label: "Красное п/сл вино", value: "Красное п/сл вино"},
+        {label: "Белое сухое", value: "Белое сухое"},
+        {label: "Белое п/сл вино", value: "Белое п/сл вино"},
+        {label: "Шампанское", value: "Шампанское"},
+        {label: "Мартини", value: "Мартини"},
+        {label: "Коньяк", value: "Коньяк"},
+        {label: "Водка", value: "Водка"},
+        {label: "Виски", value: "Виски"},
     ];
     const toast = useRef<Toast>(null);
 
@@ -34,21 +37,16 @@ const Questionnaire = () => {
     const sendData = useCallback((event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        const TOKEN = process.env.REACT_APP_BOT_TOKEN;
-        const CHAT_ID = process.env.REACT_APP_CHAT_ID;
+        const TOKEN = import.meta.env.VITE_APP_BOT_TOKEN;
+        const CHAT_ID = import.meta.env.VITE_APP_CHAT_ID;
         const URL = `https://api.telegram.org/bot${ TOKEN }/sendMessage`;
-        const itemData = {
-            nameGuest: name,
-            goTo: go,
-        };
 
-        if (selectedAlco) itemData["alco"] = selectedAlco.map((item) => item.label).join(", ")
+        let message = `<b>Заполнение формы гостя</b>
 
-        const message = `<b>Заполнение формы гостя</b>
-<b>Фамилия и Имя</b>: ${itemData.nameGuest}.
-<b>Придет на свадьбу</b>: ${itemData.goTo}.
-<b>Будет пить</b>: ${itemData["alco"]}.
-        `;
+<b>Фамилия и Имя</b>: ${name}
+<b>Придет на свадьбу</b>: ${go}
+`;
+        if(selectedAlco.length !==0) message += `<b>Будет пить</b>: ${selectedAlco.join(", ")}`
 
         axios.post(URL, {
             chat_id: CHAT_ID,
@@ -59,6 +57,8 @@ const Questionnaire = () => {
                 setGo("");
                 setName("");
                 setSelectedAlco(null);
+                setYesChecked(false);
+                setNoChecked(false);
                 return showInfo(toast, "Заполнение формы", "Данные были отправлены!");
             }
         ).catch(
@@ -69,7 +69,6 @@ const Questionnaire = () => {
 
 
     }, [name, go, selectedAlco, showInfo, showError]);
-
 
     return (
         <div className="questionnaire">
@@ -85,11 +84,19 @@ const Questionnaire = () => {
                     </span>
                     <fieldset className="questionnaire__fieldset">
                         <label htmlFor={"yes"}>
-                            <input className="questionnaire__fieldset_item" type="radio" name="go" value="Да" id="yes" onClick={() => setGo("Да")}/>
+                            <input className="questionnaire__fieldset_item" checked={yesChecked} type="radio" name="go" value="Да" id="yes" onClick={() => {
+                                setGo("Да");
+                                setYesChecked(true);
+                                setNoChecked(false);
+                            }}/>
                             Да, с удовольствием!
                         </label>
                         <label htmlFor={"yes"}>
-                            <input className="questionnaire__fieldset_item" type="radio" name="go" value="Нет" id="no" onClick={() => setGo("Нет")}/>
+                            <input className="questionnaire__fieldset_item" checked={noChecked} type="radio" name="go" value="Нет" id="no" onClick={() => {
+                                setGo("Нет");
+                                setYesChecked(false);
+                                setNoChecked(true);
+                            }}/>
                             К сожалению, не смогу
                         </label>
                     </fieldset>
