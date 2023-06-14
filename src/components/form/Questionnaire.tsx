@@ -126,6 +126,7 @@ const Questionnaire = () => {
                         onChange={(e) => setSelectedAlco(e.value)}
                         placeholder="Выберите напитки"
                         display={"chip"}
+                        disabled={noChecked}
                     />
                 </div>
                 <Button className="questionnaire__button" label={"Отправить"} disabled={go === "" || name === ""}/>
