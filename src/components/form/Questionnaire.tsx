@@ -127,6 +127,7 @@ const Questionnaire = () => {
                         placeholder="Выберите напитки"
                         display={"chip"}
                         disabled={noChecked}
+                        showSelectAll={false}
                     />
                 </div>
                 <Button className="questionnaire__button" label={"Отправить"} disabled={go === "" || name === ""}/>
