@@ -113,7 +113,7 @@ const Questionnaire = () => {
                         placeholder={"Морозов Алексей, Морозова Алина"}
                         autoComplete="off"
                         required
-                        maxlength={30}
+                        maxLength={30}
                     />
                 </div>
                 <div className="questionnaire__item">
