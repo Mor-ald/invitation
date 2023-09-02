@@ -18,7 +18,7 @@ function App() {
         <Dress/>
         <Remained/>
         <Wishes/>
-        <Questionnaire/>
+        {/* <Questionnaire/> */}
         <Contacts/>
     </>
   )
